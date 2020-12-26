@@ -105,7 +105,9 @@ class MyWindow(QMainWindow):
 
         self.text_edit.append("종목코드: " + code)
         self.text_edit.append("종목명: " + name)
-        
+        self.text_edit.append("종목명: " + str(offer))
+
+
 
     def btn4_clicked(StockFinder):
 
