@@ -55,6 +55,7 @@ class MyWindow(QMainWindow):
 
 
 
+
         self.text_edit = QTextEdit(self)
         self.text_edit.setGeometry(200, 60, 250, 300)
         self.text_edit.setEnabled(False)
@@ -80,13 +81,22 @@ class MyWindow(QMainWindow):
        # btn4.clicked.connect(self.btn4_clicked)
 
 
+    def closeEvent(self, QCloseEvent):
+        ans = QMessageBox.question(self, "프로그램 종료", "종료하시겠습니까?",
+                             QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+        if ans == QMessageBox.Yes:
+            QCloseEvent.accept()
+        else:
+            QCloseEvent.ignore()
+
+
 
 
     def btn1_clicked(self):
         QMessageBox.about(self, "message", "크레온 플러스 실행...")
 
         application.Application().start(
-            "C:/CREON/STARTER/coStarter.exe    /prj:cp /id:#### /pwd:##/pwdcert:### /autostart")
+            "C:/CREON/STARTER/coStarter.exe    /prj:cp /id:kwr2002 /pwd:kimwr78/pwdcert:kimwr78787* /autostart")
 
 
     def btn2_clicked(self): #연결 확인이벤트
@@ -120,9 +130,6 @@ class MyWindow(QMainWindow):
             kospi_code_name_list.append(x + " : " + name)
 
         self.listWidget.addItems(listAllStrategy)
-
-
-
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
