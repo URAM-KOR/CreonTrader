@@ -96,7 +96,7 @@ class MyWindow(QMainWindow):
         QMessageBox.about(self, "message", "크레온 플러스 실행...")
 
         application.Application().start(
-            "C:/CREON/STARTER/coStarter.exe    /prj:cp /id:kwr2002 /pwd:kimwr78/pwdcert:kimwr78787* /autostart")
+            "C:/CREON/STARTER/coStarter.exe    /prj:cp /id:##### /pwd:#####/pwdcert:##### /autostart")
 
 
     def btn2_clicked(self): #연결 확인이벤트
