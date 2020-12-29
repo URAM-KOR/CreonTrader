@@ -63,6 +63,11 @@ class MyWindow(QMainWindow):
         # 로그인 확인
         btn2.clicked.connect(self.event_connect)
 
+        menu = self.menuBar()  # 메뉴 생성
+        menu_file = menu.addMenu('File')  # 그룹 생성
+        menu_edit = menu.addMenu('Edit')  # 그룹 생성
+        menu_view = menu.addMenu('View')  # 그룹 생성
+
 
         label = QLabel('종목코드: ', self)
         label.move(200,20)
@@ -96,7 +101,7 @@ class MyWindow(QMainWindow):
         QMessageBox.about(self, "message", "크레온 플러스 실행...")
 
         application.Application().start(
-            "C:/CREON/STARTER/coStarter.exe    /prj:cp /id:##### /pwd:#####/pwdcert:##### /autostart")
+            "C:/CREON/STARTER/coStarter.exe    /prj:cp /id:kwr2002 /pwd:kimwr78/pwdcert:kimwr78787* /autostart")
 
 
     def btn2_clicked(self): #연결 확인이벤트
@@ -131,9 +136,15 @@ class MyWindow(QMainWindow):
 
         self.listWidget.addItems(listAllStrategy)
 
+
+
+
+
+
+
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     mywindow = MyWindow()
     mywindow.show()
     app.exec_()
- 
